@@ -40,5 +40,10 @@ A link to the [code]():
 ```
 
 ## Developers
+- :computer: [Elexis Blash](https://github.com/E-Lexis)
+- :computer: [Alicia Jimenez](https://github.com/amjimenez)
+- :computer:  [Mo Yang](https://github.com/moyangdev)
+- :computer: [William Strothe](https://github.com/wwstrothe)
+- :computer: [Juan Garcia](https://github.com/jgarcia45)
 
 ## License
