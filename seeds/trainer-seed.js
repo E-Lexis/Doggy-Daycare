@@ -2,24 +2,32 @@ const { Trainer } = require('../models')
 
 const trainerdata = [
   {
-    username: "trainer 1",
-    email: "T1@mail.com",
+    username: "OwnerUsername",
+    email: "owner@mail.com",
     password: "password1234",
+    position: "Owner",
+    about_text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur modi voluptatum odio earum, et expedita omnis quod blanditiis! A vel aperiam illo, error maxime odit animi quidem soluta esse modi."
   },
   {
-    username: "trainer 2",
-    email: "T2@mail.com",
+    username: "Scheduler",
+    email: "scheduler@mail.com",
     password: "password1234",
+    position: "Scheduler",
+    about_text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur modi voluptatum odio earum, et expedita omnis quod blanditiis! A vel aperiam illo, error maxime odit animi quidem soluta esse modi."
   },
   {
-    username: "trainer 3",
-    email: "T3@mail.com",
+    username: "LeadTrainer",
+    email: "LeadTrainer@mail.com",
     password: "password1234",
+    position: "Lead Trainer",
+    about_text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur modi voluptatum odio earum, et expedita omnis quod blanditiis! A vel aperiam illo, error maxime odit animi quidem soluta esse modi."
   },
   {
-    username: "trainer 4",
-    email: "T4@mail.com",
+    username: "Cleaner",
+    email: "cleaner@mail.com",
     password: "password1234",
+    position: "Cleaner",
+    about_text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur modi voluptatum odio earum, et expedita omnis quod blanditiis! A vel aperiam illo, error maxime odit animi quidem soluta esse modi."
   }
 ];
 

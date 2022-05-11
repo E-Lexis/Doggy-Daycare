@@ -69,7 +69,12 @@ router.post('/login', (req, res) => {
         res.status(400).json({ message: 'Incorrect password' });
         return;
       }
-      res.json({ trainer: dbTrainerData, message: 'You are now logged in!' });
+      req.session.save(() => {
+        req.session.trainer_id = dbTrainerData.id;
+        req.session.username = dbTrainerData.username;
+        req.session.loggedIn = true;
+        res.json({ trainer: dbTrainerData, message: 'You are now logged in!' });
+      });
     });
 });
 
