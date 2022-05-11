@@ -16,6 +16,7 @@ router.get('/', (req,res) => {
 
 // GET single trainer
 router.get('/:id', (req, res) => {
+  console.log('-----------------------');
   Trainer.findOne({
     attributes: { exclude: ['password'] },
     where: { id: req.params.id }
@@ -35,6 +36,7 @@ router.get('/:id', (req, res) => {
 
 // Create Trainer
 router.post('/', (req, res) => {
+  console.log('-----------------------');
   Trainer.create({
     username: req.body.username,
     email: req.body.email,
@@ -49,8 +51,31 @@ router.post('/', (req, res) => {
     });
 });
 
+// Trainer login
+router.post('/login', (req, res) => {
+  console.log('-----------------------');
+  Trainer.findOne({
+    where: {
+      username: req.body.username
+    }
+  })
+    .then(dbTrainerData => {
+      if (!dbTrainerData) {
+        res.status(400).json({ message: 'No trainer with that email' });
+        return;
+      }
+      const validPassword = dbTrainerData.checkPassword(req.body.password);
+      if (!validPassword) {
+        res.status(400).json({ message: 'Incorrect password' });
+        return;
+      }
+      res.json({ trainer: dbTrainerData, message: 'You are now logged in!' });
+    });
+});
+
 // Update Trainer info
 router.put('/:id', (req, res) => {
+  console.log('-----------------------');
   Trainer.update(req.body, {
     attributes: { exclude: ["password"] },
     individualHooks: true,
@@ -73,6 +98,7 @@ router.put('/:id', (req, res) => {
 
 // Delete Trainer 
 router.delete('/:id', (req, res) => {
+  console.log('-----------------------');
   Trainer.destroy({
     where: {
       id: req.params.id
