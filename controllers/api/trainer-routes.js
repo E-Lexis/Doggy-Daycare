@@ -49,4 +49,46 @@ router.post('/', (req, res) => {
     });
 });
 
+// Update Trainer info
+router.put('/:id', (req, res) => {
+  Trainer.update(req.body, {
+    attributes: { exclude: ["password"] },
+    individualHooks: true,
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((dbTrainerData) => {
+      if (!dbTrainerData) {
+        res.status(404).json({ message: "No trainer found with this id" });
+        return;
+      }
+      res.json(dbTrainerData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+})
+
+// Delete Trainer 
+router.delete('/:id', (req, res) => {
+  Trainer.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(dbTrainerData => {
+      if (!dbTrainerData) {
+        res.status(404).json({ message: 'No trainer found with this id' });
+        return;
+      }
+      res.json(dbTrainerData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 module.exports = router;

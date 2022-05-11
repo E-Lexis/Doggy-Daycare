@@ -40,6 +40,21 @@ Trainer.init(
     },
   },
   {
+    hooks: {
+      // set up beforeCreate lifecycle "hook" functionality
+      async beforeCreate(newTrainerData) {
+        newTrainerData.password = await bcrypt.hash(newTrainerData.password, 10);
+        return newTrainerData;
+      },
+
+      async beforeUpdate(updatedTrainerData) {
+        updatedTrainerData.password = await bcrypt.hash(
+          updatedTrainerData.password,
+          10
+        );
+        return updatedTrainerData;
+      },
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
