@@ -31,6 +31,6 @@ const trainerdata = [
   }
 ];
 
-const seedTrainers = () => Trainer.bulkCreate(trainerdata)
+const seedTrainers = () => Trainer.bulkCreate(trainerdata);
 
-module.exports = seedTrainers
+module.exports = seedTrainers;
