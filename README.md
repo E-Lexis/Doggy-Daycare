@@ -1,6 +1,6 @@
 # Doggy-Daycare
 [![MSU](https://img.shields.io/badge/MSU-Coding%20Bootcamp-green/)](https://bootcamp.msu.edu/)
-<!-- ![GitHub](https://img.shields.io/github/license/jgarcia45/e-commerce-back-end) -->
+![GitHub](https://img.shields.io/github/license/E-Lexis/Doggy-Daycare)
 
 ## Technologies
 ![Technologies](https://img.shields.io/badge/-Git-F05032?logo=Git&logoColor=white)
@@ -47,3 +47,6 @@ A link to the [code]():
 - :computer: [Juan Garcia](https://github.com/jgarcia45)
 
 ## License
+  Copyright (c) Elexis Blash. All rights reserved.
+  
+  Licensed under the [MIT](LICENSE) license.
