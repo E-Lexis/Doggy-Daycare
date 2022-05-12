@@ -1,6 +1,6 @@
 const { Owner } = require('../models')
 
-const Ownerdata = [
+const ownerdata = [
   {
     username: "OwnerOne",
     password: "password1234",
@@ -24,6 +24,6 @@ const Ownerdata = [
   }
 ];
 
-const seedOwners = () => Owner.bulkCreate(Ownerdata)
+const seedOwners = () => Owner.bulkCreate(ownerdata);
 
-module.exports = seedOwners
+module.exports = seedOwners;
