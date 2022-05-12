@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require("sequelize");
+const { Model, DataTypes, Sequelize } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 
@@ -38,13 +38,33 @@ Trainer.init(
         len: [4],
       },
     },
+    position: Sequelize.TEXT,
+    about_text: Sequelize.TEXT,
   },
   {
+    hooks: {
+      // set up beforeCreate lifecycle "hook" functionality
+      async beforeCreate(newTrainerData) {
+        newTrainerData.password = await bcrypt.hash(
+          newTrainerData.password,
+          10
+        );
+        return newTrainerData;
+      },
+
+      async beforeUpdate(updatedTrainerData) {
+        updatedTrainerData.password = await bcrypt.hash(
+          updatedTrainerData.password,
+          10
+        );
+        return updatedTrainerData;
+      },
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: "trainer",
   }
 );
 
