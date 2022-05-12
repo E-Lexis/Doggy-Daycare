@@ -1,6 +1,6 @@
+const Dog = require('./Dog')
 const Trainer = require('./Trainer');
 const Owner = require('./Owner');
-const Dog = require('./Dog')
 
 
-module.exports = { Trainer, Owner, Dog };
+module.exports = { Dog, Trainer, Owner };
