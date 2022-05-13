@@ -39,12 +39,9 @@ Owner.init(
         },
     },
     phone: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            notNull: { args: true, msg: "You must enter Phone Number" },
-            isInt: { args: true, msg: "You must enter Phone Number" },
-        },
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        
     },
   },
   {
