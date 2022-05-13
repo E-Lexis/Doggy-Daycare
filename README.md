@@ -13,11 +13,26 @@
 ![Technologies](https://img.shields.io/badge/-dotenv-000000?logo=&logoColor=white)
 
 ## Description
+Developed a web application that allows users to book an appointment at an animal daycare.
 
 ## Installation
+***Requirments***
+
+[Node.js](https://nodejs.org/en/) | [MySQL](https://www.npmjs.com/package/mysql2) | [Sequelize](https://www.npmjs.com/package/sequelize) | [dotenv](https://www.npmjs.com/package/dotenv) | [Express](https://www.npmjs.com/package/express)
+
+***Once Installed:***
+1. Clone the Repository to your machine in the folder of your choice.
+2. Run the command ```npm install``` to download the dependency packages required.
+3. Login to MySQL and run the command ```source db/schema.sql``` to create the database.
+4. Run the command ```npm run seed``` to seed the database with placeholders.
+5. Start the application with ```npm start```. 
+6. The application will then run locally so check the website ```http://localhost:3001```.
 
 ## User Story
 ```
+AS a Owner
+I WANT a day-care center site
+SO THAT I can keep tack of trainers and their dogs
 ```
 
 ## Acceptance Criteria
@@ -28,15 +43,10 @@
 ## Screenshot
 ![]()
 
-## Video
-A link to the [Video]():
-```
-```
-
 ## Link
-A link to the [code]():
+A link to the [code](https://mysterious-temple-73208.herokuapp.com/):
 ```
-
+https://mysterious-temple-73208.herokuapp.com/
 ```
 
 ## Developers
