@@ -1,0 +1,15 @@
+<ol class="post-list">
+  {{#each dogs as |dogs|}}
+  <li>
+    <article class="post">
+      <div class="title">
+        <h2>{{name}}</h2>
+      </div>
+      <div class="meta">
+        {{breed}}, {{size}}, {{age}}, owned by {{owner.username}}
+        |
+      </div>
+    </article>
+  </li>
+  {{/each}}
+</ol>

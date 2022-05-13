@@ -6,28 +6,23 @@ router.get("/", (req, res) => {
   console.log("======================");
   Dog.findAll({
     attributes: [
-      "id",
-      "name",
-      "size",
-      "breed",
-      "age",
-      "created_at",
+      'name',
+      'age',
+      'breed',
+      'size'
     ],
     include: [
       {
-        model: Dog,
-        attributes: ["username"],
-      },
-    ],
+        model: Owner,
+        attributes: ['username']
+      }
+    ] 
   })
-    .then((dbDogData) => {
-      const dogs = dbDogData.map((post) => post.get({ plain: true }));
-
-      res.render("homepage", {
-        dogs
-      });
+    .then(dbDogData => {
+      const dogs = dbDogData.map(post => post.get({ plain:true }))
+      res.render('homepage', { dogs });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
