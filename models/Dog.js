@@ -27,6 +27,13 @@ Dog.init(
         size: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        owner_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'Owner',
+                key: 'id'
+            }
         }
     },
     {

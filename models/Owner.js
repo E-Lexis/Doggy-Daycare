@@ -46,13 +46,6 @@ Owner.init(
             isInt: { args: true, msg: "You must enter Phone Number" },
         },
     },
-    dog_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'dog',
-            key: 'id'
-        }
-    }
   },
   {
     hooks: {
