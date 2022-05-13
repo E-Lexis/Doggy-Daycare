@@ -3,6 +3,7 @@ const { Dog } = require("../../models");
 
 // GET all Dogs
 router.get('/', (req, res) => {
+    console.log("-----------------------");
     Dog.findAll()
         .then(dbDogData => res.json(dbDogData))
         .catch(err => {
@@ -13,6 +14,7 @@ router.get('/', (req, res) => {
 
 // GET One Dog
 router.get('/:id', (req, res) => {
+    console.log("-----------------------");
     Dog.findOne({
         where: {
             id: req.params.id
@@ -37,6 +39,7 @@ router.get('/:id', (req, res) => {
 
 // CREATE a new DOG
 router.post('/', (req, res) => {
+    console.log("-----------------------");
     Dog.create({
         name: req.body.name,
         breed: req.body.breed,
@@ -52,6 +55,7 @@ router.post('/', (req, res) => {
 
 // UPDATE a Dog
 router.put('/:id', (req, res) => {
+    console.log("-----------------------");
     Dog.update(req.body, {
         where: {
             id: req.params.id
@@ -72,6 +76,7 @@ router.put('/:id', (req, res) => {
 
 // DELETE a Dog
 router.delete('/:id', (req, res) => {
+    console.log("-----------------------");
     Dog.destroy({
         where: {
             id: req.params.id

@@ -61,7 +61,7 @@ router.post('/login', (req, res) => {
   })
     .then(dbTrainerData => {
       if (!dbTrainerData) {
-        res.status(400).json({ message: 'No trainer with that email' });
+        res.status(400).json({ message: 'No trainer with that username' });
         return;
       }
       const validPassword = dbTrainerData.checkPassword(req.body.password);
@@ -69,12 +69,7 @@ router.post('/login', (req, res) => {
         res.status(400).json({ message: 'Incorrect password' });
         return;
       }
-      req.session.save(() => {
-        req.session.trainer_id = dbTrainerData.id;
-        req.session.username = dbTrainerData.username;
-        req.session.loggedIn = true;
         res.json({ trainer: dbTrainerData, message: 'You are now logged in!' });
-      });
     });
 });
 
