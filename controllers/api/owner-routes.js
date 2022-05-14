@@ -62,7 +62,7 @@ router.post('/login', (req, res) => {
   })
     .then(dbOwnerData => {
       if (!dbOwnerData) {
-        res.status(400).json({ message: 'No Owner with that email' });
+        res.status(400).json({ message: 'No Owner with that username' });
         return;
       }
       const validPassword = dbOwnerData.checkPassword(req.body.password);
@@ -70,12 +70,7 @@ router.post('/login', (req, res) => {
         res.status(400).json({ message: 'Incorrect password' });
         return;
       }
-      req.session.save(() => {
-        req.session.Owner_id = dbOwnerData.id;
-        req.session.username = dbOwnerData.username;
-        req.session.loggedIn = true;
         res.json({ Owner: dbOwnerData, message: 'You are now logged in!' });
-      });
     });
 });
 

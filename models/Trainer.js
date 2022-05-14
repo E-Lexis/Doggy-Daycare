@@ -1,4 +1,4 @@
-const { Model, DataTypes, Sequelize } = require("sequelize");
+const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 
@@ -38,8 +38,12 @@ Trainer.init(
         len: [4],
       },
     },
-    position: Sequelize.TEXT,
-    about_text: Sequelize.TEXT,
+    position: {
+      type: DataTypes.STRING,
+    },
+    about_text: {
+      type: DataTypes.STRING,
+    },
   },
   {
     hooks: {
