@@ -75,8 +75,9 @@ router.post('/login', (req, res) => {
         req.session.username = dbTrainerData.username;
         req.session.loggedIn = true;
   
-        res.json({ user: dbUserData, message: 'You are now logged in!' });
+        res.json({ user: dbTrainerData, message: 'You are now logged in!' });
     });
+  });
 });
 
 // Update Trainer info

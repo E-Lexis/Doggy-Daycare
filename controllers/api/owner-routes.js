@@ -51,7 +51,7 @@ router.post('/', (req, res) => {
         req.session.username = dbOwnerData.username;
         req.session.loggedIn = true;
     
-        res.json(dbUserData);
+        res.json(dbOwnerData);
     })
     .catch(err => {
       console.log(err);
@@ -96,13 +96,7 @@ router.put('/:id', (req, res) => {
         res.status(404).json({ message: "No Owner found with this id" });
         return;
       }
-      req.session.save(() => {
-        // declare session variables
-        req.session.user_id = dbOwnerData.id;
-        req.session.username = dbOwnerData.username;
-        req.session.loggedIn = true;
-  
-        res.json({ user: dbOwnerData, message: 'You are now logged in!' });
+      res.json(dbOwnerData);
     })
     .catch((err) => {
       console.log(err);
