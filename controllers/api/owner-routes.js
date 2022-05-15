@@ -52,7 +52,8 @@ router.post('/', (req, res) => {
         req.session.loggedIn = true;
     
         res.json(dbOwnerData);
-    })
+      });
+    }) 
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
