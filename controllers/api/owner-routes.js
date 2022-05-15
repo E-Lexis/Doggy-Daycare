@@ -41,10 +41,17 @@ router.post('/', (req, res) => {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
     phone: req.body.phone
   })
     .then(dbOwnerData => {
-      res.json(dbOwnerData);
+      req.session.save(() => {
+        req.session.user_id = dbOwnerData.id;
+        req.session.username = dbOwnerData.username;
+        req.session.loggedIn = true;
+    
+        res.json(dbUserData);
     })
     .catch(err => {
       console.log(err);
@@ -89,7 +96,13 @@ router.put('/:id', (req, res) => {
         res.status(404).json({ message: "No Owner found with this id" });
         return;
       }
-      res.json(dbOwnerData);
+      req.session.save(() => {
+        // declare session variables
+        req.session.user_id = dbOwnerData.id;
+        req.session.username = dbOwnerData.username;
+        req.session.loggedIn = true;
+  
+        res.json({ user: dbOwnerData, message: 'You are now logged in!' });
     })
     .catch((err) => {
       console.log(err);

@@ -1,9 +1,11 @@
-var express = require("express");
+var router = require("express").Router();
 
-var router = express.Router();
+router.get("/owner-login", function (req, res, next) {
+  res.render("owner-login");
+});
 
-router.get("/login", function (req, res, next) {
-  res.render("login");
+router.get("/trainer-login", function (req, res, next) {
+  res.render("trainer-login");
 });
 
 module.exports = router;

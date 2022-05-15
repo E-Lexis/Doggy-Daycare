@@ -1,0 +1,15 @@
+<form class="trainer-login-form">
+  <section>
+    <label for="trainer-username-login">Username:</label>
+    <input type="text" id="trainer-username-login" />
+  </section>
+  <section>
+    <label for="trainer-password-login">Password:</label>
+    <input type="password" id="trainer-password-login" />
+  </section>
+  <div>
+    <button type="submit">Sign In</button>
+  </div>
+</form>
+
+<script src="/public/js/trainer-login.js"></script>

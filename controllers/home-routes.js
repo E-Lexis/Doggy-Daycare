@@ -28,12 +28,23 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/login", (req, res) => {
-  res.render("login");
+//Owner page routes
+router.get("/owner-login", (req, res) => {
+  res.render("owner-login");
 });
 
 router.get("/signup", (req, res) => {
-  res.render("signup");
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  
+  res.render("owner-signup");
+});
+
+//Trainer Page routes
+router.get("/trainer-login", (req, res) => {
+  res.render("trainer-login");
 });
 
 module.exports = router;
