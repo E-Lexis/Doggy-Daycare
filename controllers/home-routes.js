@@ -29,7 +29,7 @@ router.get("/", (req, res) => {
 });
 
 //Owner page routes
-router.get("/owner-login", (req, res) => {
+router.get("/owners/login", (req, res) => {
   res.render("owner-login");
 });
 
@@ -43,7 +43,7 @@ router.get("/signup", (req, res) => {
 });
 
 //Trainer Page routes
-router.get("/trainer-login", (req, res) => {
+router.get("/trainers/login", (req, res) => {
   res.render("trainer-login");
 });
 

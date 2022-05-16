@@ -1,15 +1,67 @@
-<ol class="post-list">
+<section>
+<div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+    <h1 class="display-5 fw-bold">Doggy Daycare</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Lorem Ipsum, some paragraph about the company here.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Register Now</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Learn More</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container px-4 py-5" id="featured-3">
+    <h2 class="pb-2 border-bottom">What We Do</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-primary bg-gradient text-white fs-2 mb-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
+        </div>
+        <h2>Featured title</h2>
+        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-primary bg-gradient text-white fs-2 mb-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"/></svg>
+        </div>
+        <h2>Featured title</h2>
+        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-primary bg-gradient text-white fs-2 mb-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+        </div>
+        <h2>Featured title</h2>
+        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
   {{#each dog as |dogs|}}
-  <li>
-    <article class="post">
-      <div class="title">
-        <h2>{{name}}</h2>
-      </div>
-      <div class="meta">
-        {{breed}}, {{size}}, {{age}}, owned by {{owner.username}}
-        |
-      </div>
-    </article>
-  </li>
+  <div class="card" style="width: 18rem;">
+    <img src="" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{dog.name}}</h5>
+      <p class="card-text">{{dog.age}}</p>
+      <p class="card-text">{{dog.breed}}</p>
+      <p class="card-text">{{dog.size}}</p>
+      <p class="card-text">Owned by: {{owner.first_name}}</p>
+    </div>
+  </div>
   {{/each}}
-</ol>
+</section>
+
+
+
+
+
+
+
+  
+  
+  
