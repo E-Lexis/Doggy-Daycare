@@ -1,9 +1,21 @@
-var express = require("express");
+module.exports.isAuth = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    next();
+  } else {
+    res
+      .status(401)
+      .json({ msg: "You are not authorized to view this resource" });
+  }
+};
 
-var router = express.Router();
-
-router.get("/login", function (req, res, next) {
-  res.render("login");
-});
-
-module.exports = router;
+module.exports.isAdmin = (req, res, next) => {
+  if (req.isAuthenticated() && req.user.admin) {
+    next();
+  } else {
+    res
+      .status(401)
+      .json({
+        msg: "You are not authorized to view this resource because you are not an admin.",
+      });
+  }
+};
