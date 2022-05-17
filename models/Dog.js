@@ -31,7 +31,7 @@ Dog.init(
         owner_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'Owner',
+                model: 'owner',
                 key: 'id'
             }
         }

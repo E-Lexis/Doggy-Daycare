@@ -15,7 +15,13 @@
         <a href="/">Doggy Daycare</a>
       </h1>
       <nav>
-        <a href="/login">login</a>
+        {{#if loggedIn}}
+          <a href="/dashboard">Dashboard</a>
+          <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
+        <a href="/owners/login">Owner Login</a>
+        <a href="/trainers/login">Trainer Login</a>
+        {{/if}}
       </nav>
     </header>
     <main>

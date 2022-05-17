@@ -25,20 +25,23 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/login", (req, res) => {
-  if (req.user) {
-    res.redirect("/");
-    return;
-  }
-  res.render("login");
+//Owner page routes
+router.get("/owners/login", (req, res) => {
+  res.render("owner-login");
 });
 
 router.get("/signup", (req, res) => {
-  if (req.user) {
-    res.redirect("/");
+  if (req.session.loggedIn) {
+    res.redirect('/');
     return;
   }
-  res.render("signup");
+  
+  res.render("owner-signup");
+});
+
+//Trainer Page routes
+router.get("/trainers/login", (req, res) => {
+  res.render("trainer-login");
 });
 
 module.exports = router;

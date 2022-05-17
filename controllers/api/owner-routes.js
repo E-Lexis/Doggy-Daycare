@@ -41,11 +41,19 @@ router.post('/', (req, res) => {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
     phone: req.body.phone
   })
     .then(dbOwnerData => {
-      res.json(dbOwnerData);
-    })
+      req.session.save(() => {
+        req.session.user_id = dbOwnerData.id;
+        req.session.username = dbOwnerData.username;
+        req.session.loggedIn = true;
+    
+        res.json(dbOwnerData);
+      });
+    }) 
     .catch(err => {
       console.log(err);
       res.status(500).json(err);

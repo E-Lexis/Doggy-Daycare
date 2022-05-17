@@ -1,7 +1,7 @@
 // Express.js connection
 const router = require("express").Router();
 // User, Task, Event models
-const { User, Task, Event } = require("../../models");
+const { Owner, Trainer, Dog } = require("../../models");
 // Express Session for the session data
 const session = require("express-session");
 // passport for authentication
@@ -85,13 +85,26 @@ router.post("/login", (req, res) => {
       res.status(400).json({ message: "No trainer with that username" });
       return;
     }
-    const validPassword = dbTrainerData.checkPassword(req.body.password);
-    if (!validPassword) {
-      res.status(400).json({ message: "Incorrect password" });
-      return;
-    }
-    res.json({ trainer: dbTrainerData, message: "You are now logged in!" });
-  });
+  })
+    .then(dbTrainerData => {
+      if (!dbTrainerData) {
+        res.status(400).json({ message: 'No trainer with that username' });
+        return;
+      }
+      const validPassword = dbTrainerData.checkPassword(req.body.password);
+      if (!validPassword) {
+        res.status(400).json({ message: 'Incorrect password' });
+        return;
+      }
+      req.session.save(() => {
+        // declare session variables
+        req.session.user_id = dbTrainerData.id;
+        req.session.username = dbTrainerData.username;
+        req.session.loggedIn = true;
+  
+        res.json({ user: dbTrainerData, message: 'You are now logged in!' });
+        });
+      });
 });
 
 // Update Trainer info

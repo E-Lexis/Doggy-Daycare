@@ -38,6 +38,14 @@ Owner.init(
         isEmail: true,
         },
     },
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+  },
+    last_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     phone: {
         type: DataTypes.INTEGER,
         allowNull: true,
@@ -67,7 +75,7 @@ Owner.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "Owner",
+    modelName: "owner",
   }
 );
 
