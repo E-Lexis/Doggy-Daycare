@@ -11,4 +11,16 @@ Dog.belongsTo(Owner, {
   onDelete: 'cascade',
 });
 
+Dog.belongsTo(Trainer, {
+  foreignKey: 'trainer_id'
+});
+
+Trainer.hasMany(Dog, {
+  foreignKey: 'dog_id'
+});
+
+Trainer.hasMany(Owner, {
+  foreignKey: 'owner_id'
+});
+
 module.exports = { Dog, Trainer, Owner };
