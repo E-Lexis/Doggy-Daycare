@@ -1,37 +1,67 @@
 <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Welcome back, {{owner.name}}</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-        <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-        </p>
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+              class="rounded-circle img-fluid" style="width: 150px;">
+            <h5 class="my-3">{{owner.name}}</h5>
+          </div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Name</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{owner.name}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{owner.email}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Phone</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{owner.phone}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>  
 </section>
 
 <section class="py-5 text-center container">
    <h2>Your Dogs</h2>
-  <div class="album py-5 bg-light">
-    <div>
-      {{#each dog}}
-      <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">Lorem Ipsum</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
+    <div class="row">
+        {{#each dog}}
+        <div class="col-md-6">
+            <div class="card mb-4 mb-md-0">
+              <div class="card-header"></div>
+              <div class="card-body">
+                <p>{{dog.breed}}</p>
+                <p>{{dog.age}</p>
+                <p>{{dog.size}}</p>
               </div>
             </div>
-        </div>
+          </div>
         {{/each}}
     </div>
-  </div>
 </section>
 
 <section class="py-5 text-center container">
@@ -44,11 +74,9 @@
 
             <div class="card-body">
               <p class="card-text">Lorem Ipsum</p>
-              <p class="card-text">Lorem Ipsum</p>
-              <p class="card-text">Lorem Ipsum</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Contact</button>
                 </div>
               </div>
             </div>

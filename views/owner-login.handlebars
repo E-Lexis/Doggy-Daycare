@@ -1,15 +1,30 @@
-<form class="owner-login-form">
-  <section>
-    <label for="owner-username-login">Username:</label>
-    <input type="text" id="owner-username-login" />
-  </section>
-  <section>
-    <label for="owner-password-login">Password:</label>
-    <input type="password" id="owner-password-login" />
-  </section>
-  <div>
-    <button type="submit">Sign In</button>
-  </div>
-</form>
+<div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                  <div class="card-header">Dog Owners Login</div>
+                    <div class="card-body">
+                      <form class="owner-login-form">
+                        <div class="form-group row">
+                          <label for="owner-username-login" class="col-md-4 col-form-label text-md-right">Username:</label>
+                          <div class="col-md-6">
+                            <input type="text" id="owner-username-login" class="form-control"/>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="owner-password-login" class="col-md-4 col-form-label text-md-right">Password:</label>
+                          <div class="col-md-6">
+                            <input type="password" id="owner-password-login" class="form-control"/>
+                          </div>
+                        </div>
+                        <div class="col-md-6 offset-md-4">
+                        <button type="submit">Sign In</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+          </div>
+</div>
 
-<script src="/public/js/owner-login.js"></script>
+<script src="/public/js/login.js"></script>
