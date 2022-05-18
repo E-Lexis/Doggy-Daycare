@@ -6,7 +6,7 @@
           <div class="card-body text-center">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
               class="rounded-circle img-fluid" style="width: 150px;">
-            <h5 class="my-3">{{owner.name}}</h5>
+            <h4 class="my-3">{{owner.name}}</h5>
           </div>
         </div>
     </div>
@@ -52,11 +52,19 @@
         {{#each dog}}
         <div class="col-md-6">
             <div class="card mb-4 mb-md-0">
-              <div class="card-header"></div>
+              <div class="card-header">
+                <h5>{{dog.name}}</h4>
+              </div>
               <div class="card-body">
                 <p>{{dog.breed}}</p>
                 <p>{{dog.age}</p>
                 <p>{{dog.size}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Remove</button>
+                    </div>
+                  </div>
               </div>
             </div>
           </div>
@@ -64,25 +72,25 @@
     </div>
 </section>
 
-<section class="py-5 text-center container">
+<section id="your-trainers" class="py-5 text-center container">
    <h2>Your Trainers</h2>
-  <div class="album py-5 bg-light">
-    <div>
-      {{#each trainer}}
-      <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">Lorem Ipsum</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Contact</button>
-                </div>
+    <div class="row">
+        {{#each trainer}}
+        <div class="col-md-6">
+            <div class="card mb-4 mb-md-0">
+              <div class="card-header">
+                <h5>{{trainer.name}}</h4>
+              </div>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Contact</button>
+                    </div>
+                  </div>
               </div>
             </div>
-        </div>
+          </div>
         {{/each}}
     </div>
-  </div>
 </section>
 
