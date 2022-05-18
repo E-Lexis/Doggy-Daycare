@@ -6,7 +6,15 @@ router.get('/owners/dashboard', (req, res) => {
   res.render('owner-dashboard');
 });
 
-router.get('/trainers/dashboard', (req, res) => {
-  res.render('trainer-dashboard');
+router.get('/owners/dashboard/edit/id:', (req, res) => {
+  const post = dbPostData.get({ plain: true });
+
+  res.render('edit-profile', {
+   post,
+   loggedIn: true
+  });
+
 });
+
+
 
