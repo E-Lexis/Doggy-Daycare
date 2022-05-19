@@ -27,6 +27,10 @@ router.get("/", (req, res) => {
 
 //Owner page routes
 router.get("/owners/login", (req, res) => {
+      if (req.session.loggedIn) {
+      res.redirect("/owners/dashboard");
+      return;
+    }
   res.render("owner-login");
 });
 
