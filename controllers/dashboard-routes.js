@@ -6,7 +6,7 @@ router.get('/owners/dashboard', (req, res) => {
   res.render('owner-dashboard');
 });
 
-router.get('/owners/dashboard/edit/id:', (req, res) => {
+router.get('/owners/dashboard/edit/:id', (req, res) => {
   const post = dbPostData.get({ plain: true });
 
   res.render('edit-profile', {
@@ -16,5 +16,5 @@ router.get('/owners/dashboard/edit/id:', (req, res) => {
 
 });
 
-
+module.exports = router;
 

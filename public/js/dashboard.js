@@ -1,4 +1,4 @@
-function editProfileFormHandler(event) {
+function editInfoFormHandler(event) {
     event.preventDefault();
   
     const username = document.querySelector("#username-edit").value.trim();
@@ -22,6 +22,30 @@ function editProfileFormHandler(event) {
         headers: { 'Content-Type': 'application/json' }
       }).then((response) => {console.log(response)})
     }
-  }
+}
+
+function addDogFormHandler(event) {
+    event.preventDefault();
   
-  document.querySelector('.edit-profile-form').addEventListener('submit', editProfileFormHandler);
+    const name = document.querySelector("#add-dog-name").value.trim();
+    const age = document.querySelector("#add-dog-age").value.trim();
+    const breed = document.querySelector("#add-dog-breed").value.trim();
+    const size = document.querySelector("#add-dog-size").value.trim();
+  
+    if (name && age && breed && size) {
+      fetch('/api/dogs', {
+        method: 'post',
+        body: JSON.stringify({
+          name,
+          age,
+          breed,
+          size
+        }),
+        headers: { 'Content-Type': 'application/json' }
+      }).then((response) => {console.log(response)})
+    }
+}
+  
+document.querySelector('.edit-info-form').addEventListener('submit', editInfoFormHandler);
+document.querySelector('.add-dog-form').addEventListener('submit', addDogFormHandler);
+

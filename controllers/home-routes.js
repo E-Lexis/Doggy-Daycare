@@ -39,9 +39,18 @@ router.get("/signup", (req, res) => {
   res.render("owner-signup");
 });
 
-//Trainer Page routes
-router.get("/trainers/login", (req, res) => {
-  res.render("trainer-login");
+router.get('/owners/dashboard', (req, res) => {
+  res.render('owner-dashboard');
+});
+
+router.get('/owners/dashboard/edit/:id', (req, res) => {
+  const post = dbPostData.get({ plain: true });
+
+  res.render('edit-profile', {
+   post,
+   loggedIn: true
+  });
+
 });
 
 module.exports = router;
