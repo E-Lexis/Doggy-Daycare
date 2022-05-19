@@ -8,7 +8,7 @@ async function loginFormHandler(event) {
         const response = await fetch('/api/owners/login', {
           method: 'post',
           body: JSON.stringify({
-            email,
+            username,
             password
           }),
           headers: { 'Content-Type': 'application/json' }
