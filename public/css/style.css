@@ -179,3 +179,12 @@ footer {
   padding: 1%;
   font-size: 110%;
 }
+
+img {
+  height: 200px;
+  width: 200px;
+}
+
+.logo {
+  height: 150px;
+}
