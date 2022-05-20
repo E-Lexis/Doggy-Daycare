@@ -21,6 +21,8 @@ function signupFormHandler(event) {
       }),
       headers: { 'Content-Type': 'application/json' }
     }).then((response) => {console.log(response)})
+
+      document.location.replace('/dashboard/');
   }
 }
 
