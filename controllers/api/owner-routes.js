@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Owner } = require("../../models");
+const session = require('express-session');
 
 // GET all Owners
 router.get('/', (req,res) => {
@@ -78,7 +79,12 @@ router.post('/login', (req, res) => {
         res.status(400).json({ message: 'Incorrect password' });
         return;
       }
-        res.json({ Owner: dbOwnerData, message: 'You are now logged in!' });
+      req.session.save(() => {
+        req.session.user_id = dbOwnerData.id;
+        req.session.username = dbOwnerData.username;
+        req.session.loggedIn = true;
+        res.json({ owner: dbOwnerData, message: 'You are now logged in!' });
+      });
     });
 });
 

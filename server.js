@@ -47,7 +47,7 @@ const sess = {
   store: new SequelizeStore({
     db: sequelize,
   }),
-  cookie: { maxAge: 1000 * 60 * 60 * 24 }, // one day max age
+  cookie: { maxAge: 1000 * 60 * 60 * 24 } // one day max age
 };
 
 // Tell the app to use Express Session for the session handling
