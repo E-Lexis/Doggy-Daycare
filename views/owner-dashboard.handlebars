@@ -8,14 +8,16 @@
               class="rounded-circle img-fluid" style="width: 150px;">
             <h4 class="my-3">Welcome back, {{owner.first_name}}</h4>
             <div class="d-flex justify-content-center mb-2">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editInfoModal">Edit Info</button>
-              <button type="button" class="btn btn-outline-primary ms-1" data-toggle="modal" data-target="#addDogModal">Add Dog</button>
+              <button type="button" class="btn btn-outline-primary ms-1" data-toggle="modal"
+                data-target="#editInfoModal">Edit Info</button>
+              <button type="button" class="btn btn-outline-primary ms-1" data-toggle="modal"
+                data-target="#addDogModal">Add Dog</button>
               <button type="button" class="btn btn-outline-primary ms-1" id="logout">Logout</button>
             </div>
           </div>
         </div>
-    </div>
-    <div class="col-lg-8">
+      </div>
+      <div class="col-lg-8">
         <div class="card mb-4">
           <div class="card-body">
             <div class="row">
@@ -48,60 +50,61 @@
         </div>
       </div>
     </div>
-  </div>  
+  </div>
 </section>
 
 <section class="py-5 text-center container">
-   <h2>Your Dogs</h2>
-    <div class="row">
-        {{#each dog}}
-        <div class="col-md-6">
-            <div class="card mb-4 mb-md-0">
-              <div class="card-header">
-                <h5>{{dog.name}}</h4>
-              </div>
-              <div class="card-body">
-                <p>{{dog.breed}}</p>
-                <p>{{dog.age}}</p>
-                <p>{{dog.size}}</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Remove</button>
-                    </div>
-                  </div>
-              </div>
+  <h2>Your Dogs</h2>
+  <div class="row">
+    {{#each dog}}
+    <div class="col-md-6">
+      <div class="card mb-4 mb-md-0">
+        <div class="card-header">
+          <h5>{{dog.name}}</h4>
+        </div>
+        <div class="card-body">
+          <p>{{dog.breed}}</p>
+          <p>{{dog.age}}</p>
+          <p>{{dog.size}}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Remove</button>
             </div>
           </div>
-        {{/each}}
+        </div>
+      </div>
     </div>
+    {{/each}}
+  </div>
 </section>
 
 <section id="your-trainers" class="py-5 text-center container">
-   <h2>Your Trainers</h2>
-    <div class="row">
-        {{#each trainer}}
-        <div class="col-md-6">
-            <div class="card mb-4 mb-md-0">
-              <div class="card-header">
-                <h5>{{trainer.name}}</h4>
-              </div>
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Contact</button>
-                    </div>
-                  </div>
-              </div>
+  <h2>Your Trainers</h2>
+  <div class="row">
+    {{#each trainer}}
+    <div class="col-md-6">
+      <div class="card mb-4 mb-md-0">
+        <div class="card-header">
+          <h5>{{trainer.name}}</h4>
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Contact</button>
             </div>
           </div>
-        {{/each}}
+        </div>
+      </div>
     </div>
+    {{/each}}
+  </div>
 </section>
 
 <!-- Modals -->
 <!-- Edit Info Modal -->
-<div class="modal fade" id="editInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -115,37 +118,37 @@
           <div class="form-group row">
             <label for="username-edit" class="col-md-4 col-form-label text-md-right">Username:</label>
             <div class="col-md-6">
-              <input type="text" id="username-edit" class="form-control"/>
+              <input type="text" id="username-edit" class="form-control" />
             </div>
           </div>
           <div class="form-group row">
             <label for="password-edit" class="col-md-4 col-form-label text-md-right">Password:</label>
             <div class="col-md-6">
-              <input type="password" id="password-edit" class="form-control"/>
+              <input type="password" id="password-edit" class="form-control" />
             </div>
           </div>
           <div class="form-group row">
             <label for="email-edit" class="col-md-4 col-form-label text-md-right">Email:</label>
-              <div class="col-md-6">
-                <input type="text" id="email-edit" class="form-control"/>
-              </div>
+            <div class="col-md-6">
+              <input type="text" id="email-edit" class="form-control" />
+            </div>
           </div>
           <div class="form-group row">
             <label for="first-name-edit" class="col-md-4 col-form-label text-md-right">First Name:</label>
             <div class="col-md-6">
-              <input type="text" id="first-name-edit" class="form-control"/>
+              <input type="text" id="first-name-edit" class="form-control" />
             </div>
           </div>
           <div class="form-group row">
             <label for="last-name-edit" class="col-md-4 col-form-label text-md-right">Last Name:</label>
             <div class="col-md-6">
-              <input type="text" id="last-name-edit" class="form-control"/>
+              <input type="text" id="last-name-edit" class="form-control" />
             </div>
           </div>
           <div class="form-group row">
             <label for="phone-edit" class="col-md-4 col-form-label text-md-right">Phone Number:</label>
             <div class="col-md-6">
-              <input type="string" id="phone-edit" class="form-control"/>
+              <input type="string" id="phone-edit" class="form-control" />
             </div>
           </div>
         </form>
@@ -159,7 +162,8 @@
 </div>
 
 <!-- Add Dog Modal -->
-<div class="modal fade" id="addDogModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addDogModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -173,28 +177,28 @@
           <div class="form-group row">
             <label for="add-dog-name" class="col-md-4 col-form-label text-md-right">Username:</label>
             <div class="col-md-6">
-              <input type="text" id="add-dog-name" class="form-control"/>
+              <input type="text" id="add-dog-name" class="form-control" />
             </div>
           </div>
           <div class="form-group row">
             <label for="add-dog-age" class="col-md-4 col-form-label text-md-right">Email:</label>
-              <div class="col-md-6">
-                <input type="integer" id="add-dog-age" class="form-control"/>
-              </div>
+            <div class="col-md-6">
+              <input type="integer" id="add-dog-age" class="form-control" />
+            </div>
           </div>
           <div class="form-group row">
             <label for="add-dog-breed" class="col-md-4 col-form-label text-md-right">First Name:</label>
             <div class="col-md-6">
-              <input type="text" id="add-dog-breed" class="form-control"/>
+              <input type="text" id="add-dog-breed" class="form-control" />
             </div>
           </div>
           <div class="form-group row">
             <label for="add-dog-size" class="col-md-4 col-form-label text-md-right">First Name:</label>
             <div class="col-md-6">
-              <select name="dog-sizes" id="add-dog-size" class="form-control"/>
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
+              <select name="dog-sizes" id="add-dog-size" class="form-control" />
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
               </select>
             </div>
           </div>
@@ -208,4 +212,6 @@
 </div>
 
 <script src="/js/dashboard.js"></script>
+<script src="/js/edit.js"></script>
+<script src="/js/addDog.js"></script>
 <script src="/js/logout.js"></script>
