@@ -13,6 +13,7 @@
 ![Technologies](https://img.shields.io/badge/-MySQL-4479A1?logo=MySQL&logoColor=white)
 ![Technologies](https://img.shields.io/badge/-Sequelize-52B0E7?logo=Sequelize&logoColor=white)
 ![Technologies](https://img.shields.io/badge/-Passport-34E27A?logo=Passport&logoColor=white)
+![Technologies](https://img.shields.io/badge/Heroku-430098?logo=Git&logoColor=white)
 
 ## Description
 Developed a web application that allows users to book an appointment at a dog daycare. The application allows users to add dogs to the portal and shows who the trainers are for the dogs. The motivation for the application is to provide a place for puppies to interact, be trained, as well as be loved while their owners are busy or at work.
