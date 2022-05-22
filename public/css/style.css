@@ -169,6 +169,10 @@ main {
   opacity: .6;
 }
 
+.meta a {
+  font-size: 95%;
+}
+
 .new-post-form input {
   width: 300px;
 }
