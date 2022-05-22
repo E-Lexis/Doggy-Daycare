@@ -1,0 +1,16 @@
+<article class="post">
+  <div class="title">
+    <h4>Name: {{name}}</h4>
+    <p>Age: {{age}}</p>
+    <p>Gender: {{gender}}</p>
+    <p>Breed: {{breed}}</p>
+    <p>Bio: {{bio}}</p>
+    <p>Owner: {{user.username}}</p>
+  </div>
+  <div class="meta">
+    Date added:
+    {{format_date created_at}}
+    |
+    <a href="/dog/{{id}}">{{comments.length}}{{format_plural " Trainer Comment" comments.length}}</a>
+  </div>
+</article>
