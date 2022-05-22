@@ -1,18 +1,22 @@
-const seedTrainers = require('./trainer-seed');
-const seedOwners = require('./owner-seed');
-const seedDogs = require('./dog-seed');
+const seedUsers = require('./user-seed')
+const seedDogs = require('./dog-seed')
+const seedAppointments = require('./appointment-seed')
+const seedComments = require('./comment-seed');
 
-const sequelize = require('../config/connection')
+
+const sequelize = require("../config/connection");
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
-  console.log('----------------------');
-  await seedTrainers();
-  console.log('----------------------');
-  await seedOwners();
-  console.log('----------------------');
+  console.log("----------------------");
+  await seedUsers();
+  console.log("----------------------");
   await seedDogs();
-  console.log('----------------------');
+  console.log("----------------------");
+  await seedAppointments();
+  console.log("----------------------");
+  await seedComments();
+
 
   process.exit(0);
 };

@@ -1,3 +1,11 @@
+{{!-- <ol class="post-list">
+  {{#each dogs as |dog|}}
+  <li>
+    {{> dog-info dog }}
+  </li>
+  {{/each}}
+</ol> --}}
+
 <section>
 <div class="px-4 my-5 text-center">
     <img class="d-block mx-auto mb-4 logo" src="img\logo.PNG" alt="">
@@ -10,6 +18,16 @@
       </div>
     </div>
   </div>
+</section>
+
+<section>
+  <ol class="post-list">
+    {{#each dogs as |dog|}}
+    <li>
+      {{> dog-info dog }}
+    </li>
+    {{/each}}
+  </ol>
 </section>
 
 <section id="aboutUs">
@@ -70,7 +88,7 @@
   </div>
 </section>
 
-<section>
+{{!-- <section>
   {{#each dog as |dogs|}}
   <div class="card" style="width: 18rem;">
     <img src="" class="card-img-top">
@@ -83,7 +101,7 @@
     </div>
   </div>
   {{/each}}
-</section>
+</section> --}}
 
 
 
