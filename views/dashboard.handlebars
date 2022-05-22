@@ -1,6 +1,11 @@
 <section>
+  <div class = "column">
+    <h2>About Me</h2>
+    {{> user-info}}
+  </div>
+  
+  <br/><br/>
   <h2>Add New Dog</h2>
-
   <form class="new-dog-form">
     <div>
       <label for="dog-name">Dog Name</label>
@@ -22,16 +27,13 @@
       <label for="dog-bio">About</label>
       <textarea id="dog-bio" name="dog-bio"></textarea>
     </div>
-    <button type="submit" class="btn">
+    <button type="submit">
       Add
     </button>
   </form>
-  <div class = "column">
-    <h2>About Me</h2>
-    {{> user-info}}
-  </div>
 </section>
 
+<br/><br/>
   {{#if dogs.length}}
   <section>
     <h2>Your Dogs</h2>

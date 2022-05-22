@@ -38,6 +38,19 @@ button:hover {
   background-color: #3486eb;
 }
 
+.content a {
+  background-color: #225ca3;
+  border: 0;
+  padding: 1%;
+  padding-top: 5px;
+  color: white;
+  font-weight: bold;
+  transition: background-color .1s;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: medium;
+}
+
 .post-list {
   margin: 0;
   padding: 0;
@@ -137,8 +150,16 @@ main {
 }
 
 .edit-link {
-  display: block;
-  margin: -1.5% 0 2% 0;
+  background-color: #225ca3;
+  border: 0;
+  padding: 1%;
+  padding-top: 5px;
+  color: white;
+  font-weight: bold;
+  transition: background-color .1s;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: medium;
 }
 
 .upvote-btn {
@@ -197,4 +218,8 @@ img {
 
 .logo {
   height: 150px;
+}
+
+li {
+  margin-top: 5%;
 }
