@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS lets_talk_dogs_db;
+DROP DATABASE IF EXISTS daycare_db;
 
-CREATE DATABASE lets_talk_dogs_db;
+CREATE DATABASE daycare_db;
