@@ -1,21 +1,10 @@
-module.exports.isAuth = (req, res, next) => {
-  if (req.isAuthenticated()) {
-    next();
+const withAuth = (req, res, next) => {
+  if (!req.session.user_id) {
+    res.status(401).json({ message: "You're not authorized to view this resource" });
+    res.redirect('/login');
   } else {
-    res
-    .status(401)
-    .json({ msg: "You are not authorized to view this resource" });
+    next();
   }
-};
+}
 
-var router = require("express").Router();
-
-router.get("/owner-login", function (req, res, next) {
-  res.render("owner-login");
-});
-
-router.get("/trainer-login", function (req, res, next) {
-  res.render("trainer-login");
-});
-
-module.exports = router;
+module.exports = withAuth
