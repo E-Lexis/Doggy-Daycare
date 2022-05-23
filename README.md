@@ -13,12 +13,13 @@
 ![Technologies](https://img.shields.io/badge/-MySQL-4479A1?logo=MySQL&logoColor=white)
 ![Technologies](https://img.shields.io/badge/-Sequelize-52B0E7?logo=Sequelize&logoColor=white)
 ![Technologies](https://img.shields.io/badge/-Passport-34E27A?logo=Passport&logoColor=white)
+![Technologies](https://img.shields.io/badge/Heroku-430098?logo=Git&logoColor=white)
 
 ## Description
-Developed a web application that allows users to book an appointment at a dog daycare. The application allows users to add dogs to the portal as well as know who is the trainer for you dog. The motivation for the application is to provide a place for puppies to interact, be trained, as well as be loved while their owners are busy or at work.
+Developed a web application that allows users to book an appointment at a dog daycare. The application allows users to add dogs to the portal and shows who the trainers are for the dogs. The motivation for the application is to provide a place for puppies to interact, be trained, as well as be loved while their owners are busy or at work.
 
 ## Installation
-***Requirments***
+***Requirements***
 
 [Node.js](https://nodejs.org/en/) | [MySQL](https://www.npmjs.com/package/mysql2)
 
@@ -28,13 +29,13 @@ Developed a web application that allows users to book an appointment at a dog da
 3. Login to MySQL and run the command ```source db/schema.sql``` to create the database.
 4. Run the command ```npm run seed``` to seed the database with placeholders.
 5. Start the application with ```npm start```. 
-6. The application will then run locally so check the website ```http://localhost:3001```.
+6. The application will then run locally, so check the website ```http://localhost:3001```.
 
 ## User Story
 ```
-AS a Owner
-I WANT a day-care center site
-SO THAT I can keep tack of trainers and their dogs
+AS a Dog Owner
+I WANT a daycare center site for my dogs
+SO THAT I can keep tack of my dogs and their owners
 ```
 
 ## Acceptance Criteria

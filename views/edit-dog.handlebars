@@ -1,0 +1,47 @@
+<article>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h2>
+    Edit Dog Info
+  </h2>
+  <form class="edit-post-form">
+    {{!-- <div>
+      <input name="post-title" type="text" value="{{post.title}}" />
+      <span>({{post.post_url}})</span>
+    </div> --}}
+    <div>
+      <label for="dog-name">Dog Name</label>
+      <input id="dog-name" name="dog-name" value="{{dog.name}}" />
+      <label for="dog-age">Dog Age</label>
+      <input id="dog-age" name="dog-age" value="{{dog.age}}" />
+      <label for="dog-gender">Dog Gender</label>
+      <input id="dog-gender" name="dog-gender" value="{{dog.gender}}" />
+      <label for="dog-breed">Dog Breed</label>
+      <input id="dog-breed" name="dog-breed" value="{{dog.breed}}" />
+    </div>
+    <div>
+      <label for="dog-bio">About</label>
+      <textarea id="dog-bio" name="dog-bio" value="{{dog.bio}}"></textarea>
+    </div>
+    <div class="meta">
+    <a href="/dog/{{id}}">{{dog.comments.length}}{{format_plural " Trainer Comment" dog.comments.length}}</a>
+  </div>
+    <button type="submit">Save Info</button>
+    <button type="button" class="delete-post-btn">Delete Info</button>
+  </form>
+</article>
+
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">add comment</button>
+  </div>
+</form>
+
+{{> comments dog.comments}}
+
+<script src="/js/delete-dog.js"></script>
+<script src="/js/edit-dog.js"></script>
+<script src="/js/comment.js"></script>

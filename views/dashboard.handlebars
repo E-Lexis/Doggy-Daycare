@@ -1,0 +1,51 @@
+<section>
+  <div class = "column">
+    <h2>About Me</h2>
+    {{> user-info}}
+  </div>
+  
+  <br/><br/>
+  <h2>Add New Dog</h2>
+  <form class="new-dog-form">
+    <div>
+      <label for="dog-name">Dog Name</label>
+      <input type="text" id="dog-name" name="dog-name" />
+    </div>
+    <div>
+      <label for="dog-age">Dog Age</label>
+      <input id="dog-age" name="dog-age" />
+    </div>
+    <div>
+      <label for="dog-gender">Dog Gender</label>
+      <input id="dog-gender" name="dog-gender" />
+    </div>
+    <div>
+      <label for="dog-breed">Dog Breed</label>
+      <input id="dog-breed" name="dog-breed" />
+    </div>
+    <div>
+      <label for="dog-bio">About</label>
+      <textarea id="dog-bio" name="dog-bio"></textarea>
+    </div>
+    <button type="submit">
+      Add
+    </button>
+  </form>
+</section>
+
+<br/><br/>
+  {{#if dogs.length}}
+  <section>
+    <h2>Your Dogs</h2>
+    <ol>
+      {{#each dogs as |dog|}}
+      <li>
+        {{> dog-info dog}}
+        <a href="/dashboard/edit/{{dog.id}}" class="edit-link">Edit Dog</a>
+      </li>
+      {{/each}}
+    </ol>
+  </section>
+  {{/if}}
+
+<script src="/js/add-dog.js"></script>

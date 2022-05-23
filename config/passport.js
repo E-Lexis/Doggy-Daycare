@@ -5,19 +5,17 @@ const { User } = require("../models");
 const validPassword = require("../lib/passwordUtils").validPassword;
 
 const customFields = {
-  usernameField: "email",
+  usernameField: "username",
   passwordField: "password",
 };
 
 const verifyCallback = (username, password, done) => {
-  User.findOne({ where: { email: username } })
+  User.findOne({ where: { username: username } })
     .then((user) => {
       if (!user) {
         return done(null, false);
       }
-
       const isValid = validPassword(password, user.hash, user.salt);
-
       if (isValid) {
         return done(null, user);
       } else {
