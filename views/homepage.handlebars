@@ -63,7 +63,16 @@
   <div class="container px-4" id="featured-3">
     <h2 class="pb-2 border-bottom">Meet Our Happy Puppers</h2>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <div class="feature col">
+      <section>
+  <ol class="post-list feature col">
+    {{#each dogs as |dog|}}
+    <li>
+      {{> dog-info dog }}
+    </li>
+    {{/each}}
+  </ol>
+</section>
+      {{!-- <div class="feature col">
         <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient text-white fs-2 mb-3">
           <svg class="bi" width="1em" height="1em"><img src="img\puppy-1.jpg" alt="first puppy image"/></svg>
         </div>
@@ -83,7 +92,7 @@
         </div>
         <h2>Bella, 9 months old</h2>
         <p>Our newest member is Bella and she loves to sleep most of the day. Working on potty training and basic commands; so far she's doing well when she's not napping.</p>
-      </div>
+      </div> --}}
     </div>
   </div>
 </section>
