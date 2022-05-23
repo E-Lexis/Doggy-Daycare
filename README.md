@@ -73,9 +73,9 @@ A link to the [code](https://github.com/E-Lexis/Doggy-Daycare):
 https://github.com/E-Lexis/Doggy-Daycare
 ```
 
-A link to the deployed [Application](https://mysterious-temple-73208.herokuapp.com/):
+A link to the deployed [Application](https://vast-plains-21432.herokuapp.com/):
 ```
-https://mysterious-temple-73208.herokuapp.com/
+https://vast-plains-21432.herokuapp.com/
 ```
 
 ## Developers
