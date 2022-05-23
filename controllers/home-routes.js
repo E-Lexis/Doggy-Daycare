@@ -62,7 +62,15 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
   res.render("signup");
+});
+
+router.get("/contactus", (req, res) => {
+  res.render("contact-us");
 });
 
 router.get("/dog/:id", (req, res) => {

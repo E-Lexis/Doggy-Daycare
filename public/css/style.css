@@ -205,13 +205,13 @@ main {
 footer {
   border-top: 1px solid #ccc;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;;
   padding: 1%;
   font-size: 110%;
   background-color: lightblue;
 }
 
-img {
+.img {
   height: 200px;
   width: 200px;
 }
